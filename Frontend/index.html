@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real Estate Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply stored theme
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+</head>
+<body class="font-sans text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900 transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 shadow-md transition-colors">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <a href="#" class="text-2xl font-bold">RealEstatePro</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-blue-600">Home</a>
+        <a href="#property" class="hover:text-blue-600">Property</a>
+        <a href="#testimonials" class="hover:text-blue-600">Testimonial</a>
+        <a href="#contact" class="hover:text-blue-600">Contact Us</a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button id="theme-toggle" class="text-2xl focus:outline-none">🌙</button>
+        <button id="mobile-menu-toggle" class="md:hidden text-2xl">☰</button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+      <a href="#" class="block hover:text-blue-600">Home</a>
+      <a href="#property" class="block hover:text-blue-600">Property</a>
+      <a href="#testimonials" class="block hover:text-blue-600">Testimonial</a>
+      <a href="#contact" class="block hover:text-blue-600">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center" style="background-image: url('https://media.istockphoto.com/id/506903162/photo/luxurious-villa-with-pool.jpg?s=612x612&w=0&k=20&c=Ek2P0DQ9nHQero4m9mdDyCVMVq3TLnXigxNPcZbgX2E=');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-bold animate-fade-in-down">Find Your Dream Home</h1>
+      <p class="mt-4 text-xl md:text-2xl animate-fade-in-up">Luxury Properties, Perfect Locations, Exceptional Service</p>
+      <div class="mt-6 flex flex-wrap gap-4 justify-center animate-fade-in-up">
+        <button class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-white transition"><a href="signup.html">Sign Up</a></button>
+        <button class="bg-white text-blue-700 px-6 py-3 rounded-full hover:bg-gray-200 transition"><a href="login.html">Login</a></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section id="property" class="py-10 bg-white dark:bg-gray-800 shadow-md -mt-12 relative z-20 transition-colors">
+    <div class="container mx-auto px-4">
+      <form class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <input type="text" placeholder="Location" class="border p-3 rounded w-full dark:bg-gray-700 dark:text-white"/>
+        <select class="border p-3 rounded w-full dark:bg-gray-700 dark:text-white">
+          <option>Price Range</option>
+          <option>$200K - $500K</option>
+          <option>$500K - $1M</option>
+        </select>
+        <select class="border p-3 rounded w-full dark:bg-gray-700 dark:text-white">
+          <option>Property Type</option>
+          <option>House</option>
+          <option>Apartment</option>
+        </select>
+        <button class="bg-blue-600 text-white px-4 py-3 rounded hover:bg-blue-700 transition w-full">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Featured Listings -->
+  <section class="py-16 bg-gray-100 dark:bg-gray-900 transition-colors">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-10 text-center">Featured Listings</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <!-- Cards -->
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden hover:scale-105 transform transition">
+          <img src="https://onekindesign.com/wp-content/uploads/2016/09/Modern-Home-Design-Essalat-Architects-01-1-Kindesign.jpg" class="w-full h-56 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">Modern Villa in California</h3>
+            <p class="text-gray-500 dark:text-gray-300">$850,000 • 4 Beds • 3 Baths</p>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden hover:scale-105 transform transition">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTClsQ8nlDjJ0qp7YMLPqRhS1DH1WwvH9R8EQ&s" class="w-full h-56 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">Family House in Texas</h3>
+            <p class="text-gray-500 dark:text-gray-300">$520,000 • 3 Beds • 2 Baths</p>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden hover:scale-105 transform transition">
+          <img src="https://b2399364.smushcdn.com/2399364/wp-content/uploads/2019/06/mm1.jpg?lossy=0&strip=1&webp=1" class="w-full h-56 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">Luxury Apartment in NYC</h3>
+            <p class="text-gray-500 dark:text-gray-300">$1,200,000 • 2 Beds • 2 Baths</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-16 bg-white dark:bg-gray-800 transition-colors">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-10">What Our Clients Say</h2>
+      <div class="max-w-2xl mx-auto relative space-y-6">
+        <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow animate-fade-in-up">
+          <p class="text-lg italic">"Amazing experience! Found the perfect home and the team made everything so smooth."</p>
+          <p class="mt-4 font-semibold">— Sarah Thompson</p>
+        </div>
+        <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow animate-fade-in-up">
+          <p class="text-lg italic">“They truly understood what we were looking for in our forever home.”</p>
+          <p class="mt-4 font-semibold">— Shahrukh Khan</p>
+        </div>
+         <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow animate-fade-in-up">
+          <p class="text-lg italic">“They always answered my calls and explained everything clearly.”</p>
+          <p class="mt-4 font-semibold">— Thomas Edison</p>
+        </div>
+         <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg shadow animate-fade-in-up">
+          <p class="text-lg italic">“We felt like we had a trusted friend guiding us through everything.”</p>
+          <p class="mt-4 font-semibold">— Shalu Roy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-900 dark:bg-black text-white py-10 transition-colors">
+    <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="text-lg font-semibold mb-2">RealEstatePro</h4>
+        <p>1234 Sunset Blvd, Los Angeles, CA</p>
+        <p>Email: contact@realestatepro.com</p>
+        <p>Contact Us: 7657959667, 9568878588</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+        <ul>
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">Listings</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Follow Us</h4>
+        <div class="flex gap-4">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="FB" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="IG" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Animations -->
+  <style>
+    @keyframes fade-in-down {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
+    .animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; }
+  </style>
+
+  <!-- JS for theme & menu -->
+  <script>
+    const html = document.documentElement;
+    const toggle = document.getElementById("theme-toggle");
+
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      const isDark = html.classList.contains("dark");
+      toggle.textContent = isDark ? "🌞" : "🌙";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+ 
